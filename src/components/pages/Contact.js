@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function Contact(props) {
+function Contact() {
   return (
-    <div>
+    <main className="bg-blue-200 h-screen font-serif">
       <h1>Contact Page</h1>
       <p>
         Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
@@ -18,13 +17,7 @@ function Contact(props) {
         conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
         rhoncus. Etiam vel condimentum magna, quis tempor nulla.
       </p>
-      <Link to="learn" role="button" className="btn btn-link">
-        Learn More
-      </Link>
-      <Link to="contact" role="button" className="btn btn-link">
-        Learn Less
-      </Link>
-    </div>
+    </main>
   );
 }
 
