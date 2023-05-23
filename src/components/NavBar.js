@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function NavTabs() {
+function NavBar() {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
@@ -17,22 +17,12 @@ function NavTabs() {
       </li>
       <li className="nav-item">
         <NavLink
-          to="about"
+          to="portfolio"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
-          About
-        </NavLink>
-      </li>
-      <li className="nav-item">
-        <NavLink
-          to="blog"
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Blog
+          Portfolio
         </NavLink>
       </li>
       <li className="nav-item">
@@ -46,18 +36,8 @@ function NavTabs() {
           Contact
         </NavLink>
       </li>
-      <li className="nav-item">
-        <NavLink
-          to="contact/learn"
-          className={({ isActive }) =>
-            isActive ? 'nav-link active' : 'nav-link'
-          }
-        >
-          Learn
-        </NavLink>
-      </li>
     </ul>
   );
 }
 
-export default NavTabs;
+export default NavBar;
