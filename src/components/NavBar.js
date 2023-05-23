@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
+    <ul className="bg-stone-300 flex h-14 font-serif items-center text-stone-500 border-b-2 border-stone-500 text-sm">
+      <li className="pl-2 hover:text-stone-800">
         <NavLink
           to="/"
           end
@@ -15,7 +15,7 @@ function NavBar() {
           Home
         </NavLink>
       </li>
-      <li className="nav-item">
+      <li className="pl-5 hover:text-stone-800">
         <NavLink
           to="portfolio"
           className={({ isActive }) =>
@@ -25,7 +25,7 @@ function NavBar() {
           Portfolio
         </NavLink>
       </li>
-      <li className="nav-item">
+      <li className="pl-5 hover:text-stone-800">
         <NavLink
           to="contact"
           end

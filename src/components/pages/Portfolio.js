@@ -2,7 +2,7 @@ import React from "react";
 
 function Portfolio() {
   return (
-    <div>
+    <main className="bg-blue-200 h-screen font-serif">
       <h1>About Page</h1>
       <p>
         Nunc pharetra finibus est at efficitur. Praesent sed congue diam. Integer gravida dui
@@ -11,7 +11,7 @@ function Portfolio() {
         semper imperdiet. Praesent euismod mi justo, faucibus scelerisque risus cursus in. Sed
         rhoncus mollis diam, sit amet facilisis lectus blandit at.
       </p>
-    </div>
+    </main>
   );
 }
 
