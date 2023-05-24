@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "WordGiffy",
+    "screenshot": "./../assets/images/wordgiffy-screenshot.png",
+    "url": "https://davidbluelamassu.github.io/WordGiffy/",
+    "gitHub": "https://github.com/DavidBlueLamassu/WordGiffy"
+  },
+  {
+    "id": 2,
+    "title": "Weather Dashboard",
+    "screenshot": "./../assets/images/weather-dashboard-screenshot.png",
+    "url": "https://davidbluelamassu.github.io/Weather-Dashboard/",
+    "gitHub": "https://github.com/DavidBlueLamassu/Weather-Dashboard"
+  },
+  {
+    "id": 3,
+    "title": "Work Day Scheduler",
+    "screenshot": "./../assets/images/scheduler-screenshot.png",
+    "url": "https://davidbluelamassu.github.io/Work-Day-Scheduler/",
+    "gitHub": "https://github.com/DavidBlueLamassu/Work-Day-Scheduler"
+  },
+  {
+    "id": 4,
+    "title": "Coding Quiz",
+    "screenshot": "./../assets/images/coding-quiz.png",
+    "url": "https://davidbluelamassu.github.io/Coding-Quiz/",
+    "gitHub": "https://github.com/DavidBlueLamassu/Coding-Quiz"
+  },
+  {
+    "id": 5,
+    "title": "Password Generator",
+    "screenshot": "./../assets/images/password-generator.png",
+    "url": "https://davidbluelamassu.github.io/Password-Generator/",
+    "gitHub": "https://github.com/DavidBlueLamassu/Password-Generator"
+  },
+  {
+    "id": 6,
+    "title": "Cubist Museum",
+    "screenshot": "./../assets/images/cubist-screenshot.png",
+    "url": "https://davidbluelamassu.github.io/Cubist-Museum/",
+    "gitHub": "https://github.com/DavidBlueLamassu/Cubist-Museum"
+  }
+]
