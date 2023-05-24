@@ -4,7 +4,7 @@ import projects from "./../../projects.json";
 
 function Portfolio() {
   return (
-    <main className="bg-blue-200 h-screen font-serif">
+    <main className="bg-blue-200 h-full font-serif">
       <h1 className="pt-10 text-center text-5xl">Portfolio</h1>
       <div>
       {ProjectDisplay()}
@@ -14,7 +14,7 @@ function Portfolio() {
 }
 
 function ProjectDisplay() {
-  return( <div className="row"> {/*Displays card components in rows instead of column default.*/}
+  return( <div className="grid grid-cols-3 pt-10"> {/*Displays card components in rows instead of column default.*/}
     {
       projects.map(function(currentObject) {
         return <ProjectCard 
