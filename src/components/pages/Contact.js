@@ -12,10 +12,16 @@ function Contact() {
       </article>
       <form className="flex flex-col items-center">
         <h2 className="text-3xl pt-14 pb-10">Send me a Text</h2>
-        <h3 className="pb-4">Name: <input></input></h3>
-        <h3 className="pb-4">E-mail Address: <input></input></h3>
-        <input className="w-96 h-40" placeholder="Message"></input>
-        <button className="bg-purple-800 text-white w-20 h-8 mt-4">Submit</button>
+        <div className="flex">
+          <h3 className="pb-4 w-16">Name:</h3>
+          <input className="h-6 w-72 mr-36 rounded-md border-2 border-slate-500 pl-1"></input>
+        </div>
+        <div className="flex pt-2 pb-2">
+          <h3 className="pb-4 w-16">E-mail:</h3>
+          <input className="h-6 w-72 mr-36 rounded-md border-2 border-slate-500 pl-1"></input>
+        </div>
+        <textarea className="w-96 h-40 rounded-md border-2 border-slate-500 pl-1" placeholder="Message"></textarea>
+        <button className="bg-purple-800 text-white w-20 h-8 mt-4 rounded-md hover:bg-red-500 hover:text-black">Submit</button>
       </form>
     </main>
   );
