@@ -14,7 +14,7 @@ function Portfolio() {
 }
 
 function ProjectDisplay() {
-  return( <div className="grid grid-cols-3 pt-10 gap-20 pb-20"> {/*Displays card components in rows instead of column default.*/}
+  return( <div className="grid md:grid-cols-2 lg:grid-cols-3 pt-10 gap-20 pb-20"> {/*Displays card components in rows instead of column default.*/}
     {
       projects.map(function(currentObject) {
         return <ProjectCard 
