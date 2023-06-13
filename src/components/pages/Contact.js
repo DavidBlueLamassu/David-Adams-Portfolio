@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import emailjs from "emailjs-com";
 
 let nameInputColor = "bg-white";
-let eMailInputColor = "bg-white";
+let emailInputColor = "bg-white";
+let subjectInputColor = "bg-white";
 let messageInputColor = "bg-white";
 let namePlace = "";
-let eMailPlace = "";
+let emailPlace = "";
+let subjectPlace = "";
 let messagePlace = "Message";
 const inputFormat = " h-6 w-56 md:w-72 mr-0 md:mr-36 rounded-md border-2 border-slate-500 pl-1";
 const textAreaFormat = " w-72 h-52 md:w-96 md:h-40 rounded-md border-2 border-slate-500 pl-1";
@@ -16,15 +19,32 @@ const [nameState, setNameState] = useState ({
     nameHolder: namePlace
   });
 
-  const [eMailState, setEMailState] = useState ({
-    eMailBackground: eMailInputColor,
-    eMailHolder: eMailPlace
+  const [emailState, setEmailState] = useState ({
+    emailBackground: emailInputColor,
+    emailHolder: emailPlace
+  });
+
+  const [subjectState, setSubjectState] = useState ({
+    subjectBackground: subjectInputColor,
+    subjectHolder: subjectPlace
   });
 
   const [messageState, setMessageState] = useState ({
     messageBackground: messageInputColor,
     messageHolder: messagePlace
   })
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_xnt1z9b', 'template_4niml8h', e.target, 'Kh6YK49KF4xov9JWF')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  }
   
   return (
     <main className="bg-blue-200 h-full font-serif">
@@ -37,26 +57,24 @@ const [nameState, setNameState] = useState ({
       </article>
       <form onSubmit={(e) => {
           let name = e.target.name.value;
-          let eMail = e.target.eMail.value;
+          let email = e.target.email.value;
+          let subject = e.target.subject.value;
           let message = e.target.message.value;
-          const source = "from David-Adams-Portfolio";
-          let userMessage = [];
           
           e.preventDefault();
 
-          if (name === "" || eMail === "" || message === "") {
+          if (name === "" || email === "" || subject === "" || message === "") {
             if (name === "") {
               console.log("Name: " + name);
             }
 
-            if (eMail === "") {
-              console.log("E-mail: " + eMail);
+            if (email === "") {
+              console.log("E-mail: " + email);
             }
 
             if (message === "") {
               console.log("message: " + message);
             }
-            
             
             if (name === "") {
               setNameState(
@@ -67,11 +85,20 @@ const [nameState, setNameState] = useState ({
               );
             }
 
-            if (eMail === "") {
-              setEMailState(
+            if (email === "") {
+              setEmailState(
                 {
-                  ...eMailState, eMailBackground: eMailInputColor = "bg-red-200",
-                  eMailHolder: eMailPlace = "Please enter your e-mail address."
+                  ...emailState, emailBackground: emailInputColor = "bg-red-200",
+                  emailHolder: emailPlace = "Please enter your e-mail address."
+                }
+              );
+            }
+
+            if (subject === "") {
+              setSubjectState(
+                {
+                  ...subjectState, subjectBackground: subjectInputColor = "bg-red-200",
+                  subjectHolder: subjectPlace = "Please enter a subject."
                 }
               );
             }
@@ -86,19 +113,11 @@ const [nameState, setNameState] = useState ({
             }
 
             return;
+
+           
           }
           
-          console.log(name);
-          console.log(eMail);
-          console.log(message);
-          console.log(source);
-
-          userMessage.push(name);
-          userMessage.push(eMail);
-          userMessage.push(message);
-          userMessage.push(source);
-
-          console.log(userMessage);
+          sendEmail(e);
 
           }} 
 
@@ -117,11 +136,22 @@ const [nameState, setNameState] = useState ({
         </div>
         <div className="flex pt-2 pb-2">
           <h3 className="pb-4 w-16">E-mail:</h3>
-          <input name="eMail" className={eMailState.eMailBackground + inputFormat} placeholder={eMailState.eMailHolder} onClick={() => {
-            setEMailState(
+          <input name="email" className={emailState.emailBackground + inputFormat} placeholder={emailState.emailHolder} onClick={() => {
+            setEmailState(
               {
-                ...eMailState, eMailBackground: eMailInputColor = "bg-white",
-                eMailHolder: eMailPlace = ""
+                ...emailState, emailBackground: emailInputColor = "bg-white",
+                emailHolder: emailPlace = ""
+              } 
+            )
+          }}></input>
+        </div>
+        <div className="flex pt-2 pb-2">
+          <h3 className="pb-4 w-16">Subject:</h3>
+          <input name="subject" className={subjectState.subjectBackground + inputFormat} placeholder={subjectState.subjectHolder} onClick={() => {
+            setSubjectState(
+              {
+                ...subjectState, subjectBackground: subjectInputColor = "bg-white",
+                subjectHolder: subjectPlace = ""
               } 
             )
           }}></input>
