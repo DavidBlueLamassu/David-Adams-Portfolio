@@ -4,9 +4,15 @@ import projects from "./../../projects.json";
 
 function Portfolio() {
   return (
+    
+    // Background color, font and spacing
     <main className="bg-blue-200 h-full font-serif">
       <h1 className="pt-10 text-center text-5xl">Portfolio</h1>
+      
+      {/* Sets up a flex box so that project cards can be centered using justify-center. */}
       <div className="flex justify-center">
+
+      {/* Function maps project cards using the ProjectCard.js props file using data from projects.json*/}
       {ProjectDisplay()}
       </div>
     </main>
@@ -14,7 +20,11 @@ function Portfolio() {
 }
 
 function ProjectDisplay() {
-  return( <div className="grid md:grid-cols-2 lg:grid-cols-3 pt-10 gap-20 pb-20"> {/*Displays card components in rows instead of column default.*/}
+  
+  // Displays cards in 1 column on small screens, 2 on medium screens, and 3 on large screens and up.
+  return( <div className="grid md:grid-cols-2 lg:grid-cols-3 pt-10 gap-20 pb-20"> 
+
+  {/* Function maps project cards using the ProjectCard.js props file using data from projects.json*/}
     {
       projects.map(function(currentObject) {
         return <ProjectCard 
