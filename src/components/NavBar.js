@@ -7,7 +7,7 @@ function NavBar() {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <nav className="sticky top-0 bg-blue-200">
+    <nav className="sticky top-0 bg-blue-200 z-10">
       <HiMenu onClick={() => setShowNav(!showNav)}
       className="md:hidden block w-10 h-10 p-2 cursor-pointer"/>
       <ul className={(showNav ? "left-0" : "-left-full") + " fixed bg-stone-500 w-4/12 h-40 text-white space-y-5 md:space-y-0 p-5 md:static md:bg-stone-300 md:flex md:h-14 font-serif md:items-center md:text-stone-500 md:border-b-2 md:border-stone-500 text-sm md:w-full bg-opacity-90"}>

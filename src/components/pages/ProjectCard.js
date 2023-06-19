@@ -12,9 +12,11 @@ import React from "react";
 
 function ProjectCard(props) {
   return ( 
-    <article className="w-80 h-80 shadow-2xl shadow-slate-800 rounded-md"> {/* Class name ensures that cards are responsive */}
+    <article className="w-80 h-80 shadow-2xl shadow-slate-800 rounded-md hover:animate-zoom"> {/* Class name ensures that cards are responsive */}
       <div className="">
-        <img src={props.screenshot} alt={props.title} className="h-48 w-80 rounded-t-md"/>
+        <a href={props.url}>
+          <img src={props.screenshot} alt={props.title} className="h-48 w-80 rounded-t-md cursor-pointer"/>
+        </a>
         <div className="text-center pt-4">
           <h2 className="text-lg">{props.title}</h2>
           <div>
