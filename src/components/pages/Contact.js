@@ -44,9 +44,11 @@ function Contact() {
     messageHolder: messagePlace
   })
 
- // A function to send an e-mail using the Name, E-mail, and Subject inputs and the Message textarea using the emailjs-com
- // npm package. This function will only be activated provided there is information in all the relevant fields. And is call 
- // at the end of a series of conditonals below.
+  // A function to send an e-mail using the Name, E-mail, and Subject inputs and the Message textarea using the emailjs-com
+  // npm package. This function will only be activated provided there is information in all the relevant fields. Provided this
+  // is the case, the function is called at the end of a series of conditonals below. The code for this function is derived from
+  // an example given in a YouTube video: RemyFamily, "How to send emails using React through EmailJs", YouTube (2021), last
+  // viewed 21 June 2023: https://www.youtube.com/watch?v=NgWGllOjkbs
 
   function sendEmail(e) {
     e.preventDefault();
@@ -80,7 +82,12 @@ function Contact() {
       <form onSubmit={(e) => {
           
           // Variables holding the values for the Name, E-mail and Subject input elements and for the Message textarea when the user
-          // clicks the Submit button at the bottom of the form.
+          // clicks the Submit button at the bottom of the form. The code for acquiring data from a form is derived in part from  
+          // Aliaksandr Sushkevich's reply to a query on "Stack Overflow": myusuf, "Get form data in React", Stack Overflow (2 May 
+          // 2014), last viewed 21 June 2023: 
+          // https://stackoverflow.com/questions/23427384/get-form-data-in-react#:~:text=A%20with%20a%20%3C,will%20enable%20both%20use%20cases 
+          // It is also partly derived from: RemyFamily, "How to send emails using React through EmailJs", YouTube (2021), last
+          // viewed 21 June 2023: https://www.youtube.com/watch?v=NgWGllOjkbs
           let name = e.target.name.value;
           let email = e.target.email.value;
           let subject = e.target.subject.value;
