@@ -5,7 +5,9 @@ import { HiMenu } from 'react-icons/hi'
 function NavBar() {
   
   // useState variable to open the hamburger menu when it is displayed on smaller screens. The boolean argument ensures that the menu
-  // is closed by default.
+  // is closed by default. The code for this variable, its use to make a pop-up menu and the formatting of that menu derives from
+  // an example from: Full Stack Niraj, "React & Tailwind CSS Responsive Navbar - Complete React Course - Day 13", 
+  // Youtube (2022), last viewed 21 June 2023: https://www.youtube.com/watch?v=Ww9oyQuS7rA
   const [showNav, setShowNav] = useState(false);
 
   
@@ -15,8 +17,9 @@ function NavBar() {
     // activated for the project cards on the portfolio page.
     <nav className="sticky top-0 bg-blue-200 z-10">
       
-      {/* HiMenu acts as the hamburger icon and is available through the npm react-icons package. It is displayed by default on 
-      small screens but is hidden on medium and larger screen sizes. The onClick function reverses the value of the boolean argument
+      {/* HiMenu acts as the hamburger icon and is available through the npm react-icons package 
+      (To access the icon search page go to: https://react-icons.github.io/react-icons/). It is displayed by default on small 
+      screens but is hidden on medium and larger screen sizes. The onClick function reverses the value of the boolean argument
       allowing the user to open and close the menu. 
        */}
       <HiMenu onClick={() => setShowNav(!showNav)}
