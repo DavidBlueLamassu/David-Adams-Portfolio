@@ -8,7 +8,7 @@ function Home() {
       <h1 className="pt-10 text-center text-5xl">Welcome to the Portfolio of David Adams</h1>
       <h2 className="pt-3 text-center text-3xl mb-10">Exploring the Limits of Web Design</h2>
       
-      {/* Sets up a flex box so that portrait and biographical information will appear in column on small screens and in a row and
+      {/* Sets up a flex box so that portrait and biographical information will appear in column on small screens and in a row on
       medium screens and up. */}
       <article className="flex flex-col md:flex-row items-center md:items-start">
         <img alt="David Adams" src="./../assets/images/portrait.jpg" className="w-40 md:mr-10 md:ml-20 pb-6 md:pt-4 lg:pt-0"></img>

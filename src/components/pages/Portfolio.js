@@ -24,7 +24,7 @@ function ProjectDisplay() {
   // Displays cards in 1 column on small screens, 2 on medium screens, and 3 on large screens and up.
   return( <div className="grid md:grid-cols-2 lg:grid-cols-3 pt-10 gap-20 pb-20"> 
 
-  {/* Function maps project cards using the ProjectCard.js props file using data from projects.json*/}
+  {/* Function creates project cards with the map method, using the ProjectCard.js props file and data from projects.json */}
     {
       projects.map(function(currentObject) {
         return <ProjectCard 
