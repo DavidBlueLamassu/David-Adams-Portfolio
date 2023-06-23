@@ -23,7 +23,7 @@ const textAreaFormat = " w-72 h-52 md:w-96 md:h-40 rounded-md border-2 border-sl
 function Contact() {
   
   // useState variables for the Name, E-mail and Subject input elements and for the Message textarea. These variables allow a change
-  // of state to indicate to indicate that the user has attempted to send a message with empty fields.
+  // of state to indicate that the user has attempted to send a message with empty fields.
   const [nameState, setNameState] = useState ({
     nameBackground: nameInputColor,
     nameHolder: namePlace
@@ -44,9 +44,9 @@ function Contact() {
     messageHolder: messagePlace
   })
 
-  // A function to send an e-mail using the Name, E-mail, and Subject inputs and the Message textarea using the emailjs-com
-  // npm package. This function will only be activated provided there is information in all the relevant fields. Provided this
-  // is the case, the function is called at the end of a series of conditonals below. The code for this function is derived from
+  // A function to send an e-mail from the Name, E-mail, and Subject inputs and the Message textarea using the emailjs-com
+  // npm package. This function will only be activated provided there is information in all the relevant fields. To ensure this, 
+  // the function is called at the end of a series of conditionals below. The code for this function is derived from
   // an example given in a YouTube video: RemyFamily, "How to send emails using React through EmailJs", YouTube (2021), last
   // viewed 21 June 2023: https://www.youtube.com/watch?v=NgWGllOjkbs
 
@@ -153,11 +153,11 @@ function Contact() {
           className="flex flex-col items-center">
         <h2 className="text-3xl pt-6 lg:pt-14 pb-10">Send me a Text</h2>
         
-        {/* Allows h3 element and input to be displayed on the same line */}
+        {/* Displays h3 element and input on the same line. */}
         <div className="flex">
           <h3 className="pb-4 w-16">Name:</h3>
           
-          {/* The onClick function returns the input to its default color and placeholder; allowing the user to enter text
+          {/* The onClick function returns the input to its default color and placeholder; making it easier to enter text
           should the state have changed to alert the user that this field is incomplete. */}
           <input name="name" className={nameState.nameBackground + inputFormat} placeholder={nameState.nameHolder} onClick={() => {
             setNameState(
@@ -169,11 +169,11 @@ function Contact() {
           }}></input>
         </div>
 
-        {/* Allows h3 element and input to be displayed on the same line */}
+        {/* Displays h3 element and input on the same line. */}
         <div className="flex pt-2 pb-2">
           <h3 className="pb-4 w-16">E-mail:</h3>
           
-          {/* The onClick function returns the input to its default color and placeholder; allowing the user to enter text
+          {/* The onClick function returns the input to its default color and placeholder; making it easier to enter text
           should the state have changed to alert the user that this field is incomplete. */}
           <input name="email" className={emailState.emailBackground + inputFormat} placeholder={emailState.emailHolder} onClick={() => {
             setEmailState(
@@ -185,11 +185,11 @@ function Contact() {
           }}></input>
         </div>
 
-        {/* Allows h3 element and input to be displayed on the same line */}
+        {/* Displays h3 element and input on the same line. */}
         <div className="flex pt-2 pb-2">
           <h3 className="pb-4 w-16">Subject:</h3>
           
-          {/* The onClick function returns the input to its default color and placeholder; allowing the user to enter text
+          {/* The onClick function returns the input to its default color and placeholder; making it easier to enter text
           should the state have changed to alert the user that this field is incomplete. */}
           <input name="subject" className={subjectState.subjectBackground + inputFormat} placeholder={subjectState.subjectHolder} onClick={() => {
             setSubjectState(
@@ -201,7 +201,7 @@ function Contact() {
           }}></input>
         </div>
         
-        {/* The onClick function returns the input to its default color and placeholder; allowing the user to enter text
+        {/* The onClick function returns the input to its default color and placeholder; making it easier to enter text
           should the state have changed to alert the user that this field is incomplete. */}
         <textarea name="message" className={messageState.messageBackground + textAreaFormat} placeholder={messageState.messageHolder} onClick={() => {
             setMessageState(
