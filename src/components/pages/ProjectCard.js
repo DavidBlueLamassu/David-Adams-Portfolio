@@ -1,11 +1,7 @@
 import React from "react";
 
-//The props argument in the ProjectCard() function allows this component to be re-used repeatedly as a template in 
-//Portfolio.js where it takes in data stored as objects in projects.json. The images for 
-//these cards are held in the assets/images subfolder within the public folder. 
-
-//This props component is used to generate cards for each project presented in the Portfolio.js section of the portfolio drawing 
-//from data stored in project.json. 
+//This props component is used to generate cards for each project presented in the Portfolio.js page component, drawing 
+//from data stored in projects.json. 
 
 function ProjectCard(props) {
   return ( 
