@@ -76,7 +76,7 @@ function Contact() {
         <a href="https://github.com/DavidBlueLamassu" className="hover:text-red-600 w-40 text-center">Github Profile</a>
         <a href="https://www.linkedin.com/in/david-adams-922022a1/" className="hover:text-red-600 w-40 text-center">LinkedIn Page</a>
         <a href="mailto:dra21@cam.ac.uk" className="hover:text-red-600 w-40 text-center">E-mail</a>
-        <a href="https://drive.google.com/file/d/1pjDfgrQ_WDt_PpRfR_K9VMia41A3VUls/view" className="hover:text-red-600 w-40 text-center">CV</a>
+        <a href="./../assets/images/david-adams-cv.pdf" className="hover:text-red-600 w-40 text-center">CV</a>
       </article>
       
       <form onSubmit={(e) => {
