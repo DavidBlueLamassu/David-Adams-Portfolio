@@ -8,7 +8,7 @@ import Contact from './components/pages/Contact';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="bg-blue-200">
         <NavBar />
         {/* Wrap Route elements in a Routes component */}
         <Routes>
