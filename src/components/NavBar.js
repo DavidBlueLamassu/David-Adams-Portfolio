@@ -10,7 +10,14 @@ function NavBar() {
   // Day 13", Youtube (2022), last viewed 21 June 2023: https://www.youtube.com/watch?v=Ww9oyQuS7rA
   const [showNav, setShowNav] = useState(false);
 
-  
+
+  //useState variable to change the color of the most recently selected navbar link to red in order to indicate which page is currently displayed.
+  const [pageState, setPageState] = useState({
+    homeText: "md:text-red-500",
+    portfolioText: "md:text-stone-500",
+    contactText: "md:text-stone-500"
+  });
+
   return (
     
     // Formatting keeps the navbar/menu fixed at the top of the page; z-index ensures that the navbar always displays uppermost, 
@@ -32,24 +39,41 @@ function NavBar() {
         https://stackoverflow.com/questions/27583937/how-can-i-make-a-css-glass-blur-effect-work-for-an-overlay, and from a video
         by Saraev Media: "How to Create a Frosted Navbar with TailwindCSS", YouTube (2021), last viewed 1 August 2023: 
         https://www.youtube.com/watch?v=nK4J7CguMFc */}
-      <ul className={(showNav ? "left-0" : "-left-full") + " fixed bg-stone-500 w-4/12 h-40 text-white space-y-5 md:space-y-0 p-5 md:static md:bg-stone-300 md:bg-opacity-0 md:backdrop-blur-sm md:flex md:h-14 font-serif md:items-center md:text-stone-500 md:border-b-2 md:border-stone-500 text-sm md:w-full bg-opacity-90"}>
-        <li className="md:pl-2 hover:text-stone-800">
-          <NavLink
+      <ul className={(showNav ? "left-0" : "-left-full") + " fixed bg-stone-500 w-4/12 h-40 text-white space-y-5 md:space-y-0 p-5 md:static md:bg-stone-300 md:bg-opacity-0 md:backdrop-blur-sm md:flex md:h-14 font-serif md:items-center md:border-b-2 md:border-stone-500 text-sm md:w-full bg-opacity-90"}>
+        <li className={pageState.homeText + " md:pl-2 hover:text-stone-800"}>
+          
+          {/* The pageState, setPageState variable changes the color of the most recently clicked link to red, using onClick, in order to indicate which page is currently displayed. */}
+          <NavLink onClick={() => setPageState(
+            {...pageState, homeText: "md:text-red-500",
+            portfolioText: "md:text-stone-500",
+            contactText: "md:text-stone-500"
+            }
+            )}
             to="/"
             end
           >
             Home
           </NavLink>
         </li>
-        <li className="md:pl-5 hover:text-stone-800">
-          <NavLink
+        <li className={pageState.portfolioText + " md:pl-5 hover:text-stone-800"}>
+          <NavLink onClick={() => setPageState(
+            {...pageState, homeText: "md:text-stone-500",
+            portfolioText: "md:text-red-500",
+            contactText: "md:text-stone-500"
+            }
+            )}
             to="portfolio"
           >
             Portfolio
           </NavLink>
         </li>
-        <li className="md:pl-5 hover:text-stone-800">
-          <NavLink
+        <li className={pageState.contactText + " md:pl-5 hover:text-stone-800"}>
+          <NavLink onClick={() => setPageState(
+            {...pageState, homeText: "md:text-stone-500",
+            portfolioText: "md:text-stone-500",
+            contactText: "md:text-red-500"
+            }
+            )}
             to="contact"
             end
           >
