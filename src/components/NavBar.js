@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { NavLink } from 'react-router-dom';
 import { HiMenu } from 'react-icons/hi'
+import { useContext } from "react";
+import { BackgroundMaker } from "../App";
 
 function NavBar() {
   
+  // useContext and useState variables to reset the NavBar background color to match the page that is currently displayed.
+  const [navBackground, setNavBackground] = useContext(BackgroundMaker);
+
   // useState variable to open the hamburger menu when it is displayed on smaller screens. The boolean argument, set to false, ensures
   // that the menu is closed by default. The code for this variable, its use to make a pop-up menu and the formatting of that
   // menu (below) derives from an example from: Full Stack Niraj, "React & Tailwind CSS Responsive Navbar - Complete React Course -
@@ -41,13 +46,19 @@ function NavBar() {
       <ul className={(showNav ? "left-0" : "-left-full") + " fixed bg-stone-500 w-4/12 h-40 text-white space-y-5 md:space-y-0 p-5 md:static md:bg-stone-300 md:bg-opacity-0 md:backdrop-blur-sm md:flex md:h-14 font-serif md:items-center md:border-b-2 md:border-stone-500 text-sm md:w-full bg-opacity-90"}>
         <li className={pageState.homeText + " md:pl-2"}>
           
-          {/* The pageState, setPageState variable changes the color of the most recently clicked link to red, using onClick, in order to indicate which page is currently displayed. Links become darker upon hover.*/}
-          <NavLink onClick={() => setPageState(
+          {/* The pageState, setPageState variable changes the color of the most recently clicked link to red, using onClick, in order to indicate which page is currently displayed. Links become darker upon hover. The navBackground, setNavBackground variable works 
+          in conjunction with the BackgroundMaker useContext variable to change the color of the div parent element containing the NavBar and
+          page components in the App component. This, in effect, changes the background color of the NavBar given its background is set to
+          transparent and allows its color to match that of the page component displayed.*/}
+          <NavLink onClick={() => {setPageState(
             {...pageState, homeText: "md:text-red-500 md:hover:text-red-600",
             portfolioText: "md:text-stone-500 md:hover:text-stone-800",
             contactText: "md:text-stone-500 md:hover:text-stone-800"
             }
-            )}
+            );
+            setNavBackground(
+              {...navBackground, backgroundColor: "bg-blue-200"}
+            )}}
             to="/"
             end
           >
@@ -55,24 +66,31 @@ function NavBar() {
           </NavLink>
         </li>
         <li className={pageState.portfolioText + " md:pl-5"}>
-          <NavLink onClick={() => setPageState(
+          <NavLink onClick={() => {setPageState(
             {...pageState, homeText: "md:text-stone-500 md:hover:text-stone-800",
             portfolioText: "md:text-red-500 md:hover:text-red-600",
             contactText: "md:text-stone-500 md:hover:text-stone-800"
             }
-            )}
+            );
+            setNavBackground(
+              {...navBackground, backgroundColor: "bg-red-200"}
+            )}}
             to="portfolio"
           >
             Portfolio
           </NavLink>
         </li>
         <li className={pageState.contactText + " md:pl-5"}>
-          <NavLink onClick={() => setPageState(
+          <NavLink onClick={() => {setPageState(
             {...pageState, homeText: "md:text-stone-500 md:hover:text-stone-800",
             portfolioText: "md:text-stone-500 md:hover:text-stone-800",
             contactText: "md:text-red-500 md:hover:text-red-600"
             }
-            )}
+            );
+            setNavBackground(
+              {...navBackground, backgroundColor: "bg-green-200"}
+            )
+          }}
             to="contact"
             end
           >
