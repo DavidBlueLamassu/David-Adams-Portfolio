@@ -217,7 +217,7 @@ function Contact() {
       </form>
       
       {/* This empty footer ensures that the background color continues to the bottom of the screen display. */}
-      <footer className="h-20 bg-blue-200">
+      <footer className="h-20 bg-green-200">
       </footer>
     </main>
   );
