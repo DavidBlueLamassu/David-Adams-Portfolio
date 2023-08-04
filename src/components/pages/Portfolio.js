@@ -6,7 +6,7 @@ function Portfolio() {
   return (
     
     // Background color, font and spacing
-    <main className="bg-blue-200 h-full font-serif">
+    <main className="bg-red-200 h-full font-serif">
       <h1 className="pt-10 text-center text-5xl">Portfolio</h1>
       
       {/* Sets up a flex box so that project cards can be centered using justify-center. */}

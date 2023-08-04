@@ -68,7 +68,7 @@ function Contact() {
   return (
     
     // Background color and fount formatting
-    <main className="bg-blue-200 h-full font-serif">
+    <main className="bg-green-200 h-full font-serif">
       <h1 className="text-5xl pt-10 text-center">Contact Me</h1>
       
       {/* A series of links arranged in a flex box. The link text turns red upon hover. */}
