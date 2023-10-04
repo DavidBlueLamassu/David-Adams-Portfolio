@@ -13,12 +13,11 @@ function Home() {
       <article className="flex flex-col md:flex-row items-center md:items-start">
         <img alt="David Adams" src="./../assets/images/portrait.jpg" className="w-40 md:mr-10 md:ml-20 pb-6 md:pt-4 lg:pt-0"></img>
         <p className="text-lg text-justify md:mr-20 mx-4 bg-blue-200">
-        Welcome to my portfolio. I am a Junior Frontend Developer and I am excited to have just begun an internship at Caustaza Group Ltd. My skills include coding with: React.js, TailwindCSS, 
+        Welcome to my portfolio. I am a Junior Web Developer. I recently completed an online coding bootcamp in Frontend Web Development run by edX, graduating with a mark of 98.5%. My skills include coding with: React.js, TailwindCSS, 
         Node.js, JavaScript/jQuery, Bootstrap, CSS and HTML. To date, I have deployed 12 webpages on GitHub pages and 3 on Netlify. 
         I also have 2 GitHub repos dedicated to backend applications using Node. I particularly enjoy the problem-solving aspects of 
         working with JavaScript and its offshoots. I am also interested in developing animations using Tailwind and CSS. Examples 
-        of my work may be found in the Portfolio section. Please feel free to contact me. Social media links, my CV and a contact form 
-        may be found in the Contact section.
+        of my work may be found in the Portfolio section. Please feel free to contact me. Social media links, my CV and a contact form may be found on the Contact page.
         </p>
       </article>
       {/* The empty footer ensures that the background color will continue to the bottom of the screen display */}
